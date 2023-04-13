@@ -1,3 +1,10 @@
+!pip install -q streamlit
+!pip install matplotlib
+!pip install seaborn
+!pip install pandas
+!pip install math
+!pip install scipy
+
 import streamlit as st
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -45,8 +52,6 @@ def generate_table_and_plot(alpha, beta, num_weeks, control_cr, total_sample_siz
     st.table(table_df)
 
     st.pyplot(fig)
-
-import streamlit as st
 
 st.title("Calculadora de Tamanho de Amostra para Testes A/B")
 st.write("Este app calcula o tamanho de amostra necessário para um teste A/B com um número de variantes e número de semanas especificados. O tamanho de amostra é calculado com base em um nível de significância, poder estatístico, taxa de conversão do grupo de controle e tamanho total da amostra. O resultado é apresentado em uma tabela e um gráfico.")
