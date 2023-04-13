@@ -1,10 +1,3 @@
-pip install -q streamlit
-pip install matplotlib
-pip install seaborn
-pip install pandas
-pip install math
-pip install scipy
-
 import streamlit as st
 import matplotlib
 import matplotlib.pyplot as plt
