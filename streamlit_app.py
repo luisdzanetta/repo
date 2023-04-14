@@ -26,6 +26,7 @@ def generate_table_and_plot(alpha, beta, num_weeks, control_cr, total_sample_siz
         table.append([week, week_sample_size_str, week_total_sample_size_str, mde_str])
         mde_values.append(mde)
         total_sample_size_values.append(week_total_sample_size)
+        
     sns.set_style("white")
     sns.color_palette("rocket")
     fig, ax1 = plt.subplots()
