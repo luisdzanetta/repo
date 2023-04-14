@@ -74,6 +74,6 @@ beta = st.slider("Statistical power (β)", 0.2, 0.95, 0.8, 0.05)
 num_weeks = st.slider("Number of weeks in the experiment", 1, 20, 10, 1)
 control_cr = st.slider("Control group conversion rate (%)", 0.0, 100.0, 5.0, 0.05) / 100
 num_variants = st.slider("Number of variants (including control)", 1, 6, 2, 1)
-total_sample_size = st.number_input("Sample size per week")
+total_sample_size = st.number_input("Sample size per week", min_value=1, step=500, format="%4.0f")
 if st.button("Generate table and graph"):
     generate_table_and_plot(alpha, beta, num_weeks, control_cr, total_sample_size, num_variants)
