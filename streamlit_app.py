@@ -78,6 +78,12 @@ def generate_table_and_plot(alpha, beta, num_weeks, control_cr, total_sample_siz
     st.markdown(table_html, unsafe_allow_html=True)
     st.pyplot(fig)
     
+writer = pd.ExcelWriter("mde.xlsx", engine="xlswriter"
+                        
+table_df.to_excel(writer, sheet_name="Sheet1")
+                        
+writer.close()
+    
 st.title("Minimun Detectable Effect (MDE) Calculator")
 st.write("This app calculates the Minimum Detectable Effect (MDE) for conversion rate tests based on the level of statistical significance and power, number of weeks in the experiment, conversion rate of the control, sample size per week, and number of variants.")
 alpha = st.slider("Statistical significance (α)", 0.01, 0.1, 0.05, 0.01)
