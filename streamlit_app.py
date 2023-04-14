@@ -6,6 +6,7 @@ import seaborn as sns
 import pandas as pd
 from math import sqrt
 from scipy.stats import norm
+import base64
 
 def calculate_mde(alpha, beta, cr, control_cr, sample_size, num_variants):
     pooled_prob = (control_cr + cr * num_variants) / (num_variants + 1)
