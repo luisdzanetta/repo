@@ -15,6 +15,8 @@ def calculate_mde(alpha, beta, cr, control_cr, sample_size, num_variants):
     mde = (z_alpha + z_beta) * se / pooled_prob
     return mde
 
+session_state = SessionState.get(table_df=None)
+
 def generate_table_and_plot(alpha, beta, num_weeks, control_cr, total_sample_size, num_variants):
     table = []
     mde_values = []
@@ -62,6 +64,7 @@ def generate_table_and_plot(alpha, beta, num_weeks, control_cr, total_sample_siz
     plt.tight_layout()
     headers = ["Week", "Sample Size per variant", "Total Sample Size", "MDE"]
     table_df = pd.DataFrame(table, columns=headers)
+    sessions_state.table_df = table_df
     table_styles = [
     dict(selector="th", props=[("border", "1px solid #ccc"), ("background-color", "#f2f2f2"), ("text-align", "center"), ("padding", "8px")]),
     dict(selector="td", props=[("border", "1px solid #ccc"), ("text-align", "center"), ("padding", "8px")]),
@@ -89,12 +92,12 @@ total_sample_size = st.number_input("Sample size per week", min_value=1, step=50
 if st.button("Generate table and graph"):
     generate_table_and_plot(alpha, beta, num_weeks, control_cr, total_sample_size, num_variants)
     
-#@st.cache
-#def convert_df(df):
-    # IMPORTANT: Cache the conversion to prevent computation on every rerun
-    #return df.to_csv().encode('utf-8')
-
-#csv = convert_df(generate_table_and_plot)
-
-#t.download_button(label="Download table as CSV", data=csv, file_name='mde_table.csv')
+if st.button('Download CSV') or st.checkbox("Download CSV", False):
+    if session_state.table_df is not None:
+        csv = session_state.table_df.to_csv(index=False)
+        b64 = base64.b64encode(csv.encode()).decode()
+        href = f'<a href="data:file/csv;base64,{b64}" download="mde_data.csv">Download CSV file</a>'
+        st.markdown(href, unsafe_allow_html=True)
+    else:
+        st.warning("No data to download.")
      
