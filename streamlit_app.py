@@ -65,7 +65,7 @@ def generate_table_and_plot(alpha, beta, num_weeks, control_cr, total_sample_siz
     plt.tight_layout()
     headers = ["Week", "Sample Size per variant", "Total Sample Size", "MDE"]
     table_df = pd.DataFrame(table, columns=headers)
-    sessions_state.table_df = table_df
+    session_state.table_df = table_df
     table_styles = [
     dict(selector="th", props=[("border", "1px solid #ccc"), ("background-color", "#f2f2f2"), ("text-align", "center"), ("padding", "8px")]),
     dict(selector="td", props=[("border", "1px solid #ccc"), ("text-align", "center"), ("padding", "8px")]),
