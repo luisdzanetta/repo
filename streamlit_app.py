@@ -90,7 +90,7 @@ if st.button("Generate table and graph"):
     generate_table_and_plot(alpha, beta, num_weeks, control_cr, total_sample_size, num_variants)
     
 if st.button("Calculate"):
-    table_df, fig = generate_table_and_plot(alpha, beta, num_weeks, control_cr, sample_size, num_variants)
+    table_df, fig = generate_table_and_plot(alpha, beta, num_weeks, control_cr, total_sample_size, num_variants)
     st.markdown(get_table_download_link(table_df), unsafe_allow_html=True)
     st.markdown(get_plot_download_link(fig), unsafe_allow_html=True)
     
