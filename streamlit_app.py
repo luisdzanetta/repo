@@ -30,7 +30,10 @@ def generate_table_and_plot(alpha, beta, num_weeks, control_cr, total_sample_siz
     sns.set_style("white")
     sns.color_palette("rocket")
     
-    fig, ax1 = plt.subplots()
+    fig = plt.figure(figsize=(10,5))
+    ax1 = fig.add_suplot()
+    
+    #fig, ax1 = plt.subplots()
     
     ax1.plot(range(1, num_weeks+1), mde_values, color='#ED1941')
     ax1.set_xlabel('Week')
@@ -45,7 +48,7 @@ def generate_table_and_plot(alpha, beta, num_weeks, control_cr, total_sample_siz
     ax1.grid(alpha=0.3)
 
     ax2 = ax1.twinx()
-    ax2.bar(range(1, num_weeks+1), total_sample_size_values, alpha=1.0, color='#000000', width = 0.2)
+    ax2.bar(range(1, num_weeks+1), total_sample_size_values, alpha=1.0, color='#000000')
     ax2.set_ylabel('Total Sample Size', color='#000000')
     ax2.tick_params('y', colors='#000000')
     ax2.set_ylabel('Total Sample Size', fontsize=8, fontweight='bold', color='#000000', labelpad=10)
