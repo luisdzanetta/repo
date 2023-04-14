@@ -28,15 +28,13 @@ def generate_table_and_plot(alpha, beta, num_weeks, control_cr, total_sample_siz
         total_sample_size_values.append(week_total_sample_size)
         
     sns.set_style("white")
-    sns.color_palette("rocket")
-    
+    plt.rcParams['axes.spines.top'] = False
+    plt.rcParams['axes.spines.bottom'] = False
+    plt.rcParams['axes.spines.left'] = False
+    plt.rcParams['axes.spines.right'] = False
+       
     fig, ax1 = plt.subplots(figsize=(4,3))
-    ax1.spines['top'].set_color('none')
-    ax1.spines['bottom'].set_color('none')
-    ax1.spines['left'].set_color('none')
-    ax1.spines['right'].set_color('none')
-    plt.subplots_adjust(top=0.4, bottom=0.1, left=0.1, right=0.4)
-        
+           
     ax1.plot(range(1, num_weeks+1), mde_values, color='#ED1941')
     ax1.set_xlabel('Week')
     ax1.set_ylabel('MDE (%)', color='#ED1941')
