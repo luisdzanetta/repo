@@ -30,9 +30,7 @@ def generate_table_and_plot(alpha, beta, num_weeks, control_cr, total_sample_siz
     sns.set_style("white")
     sns.color_palette("rocket")
     
-    fig = plt.figure(figsize=(5,5))
-    #ax1 = fig.add_suplot()
-    fig, ax1 = plt.subplots()
+    fig, ax1 = plt.subplots(figsize=(8,6))
     
     ax1.plot(range(1, num_weeks+1), mde_values, color='#ED1941')
     ax1.set_xlabel('Week')
@@ -71,6 +69,7 @@ def generate_table_and_plot(alpha, beta, num_weeks, control_cr, total_sample_siz
     
     st.markdown(table_html, unsafe_allow_html=True)
     st.pyplot(fig)
+    
 st.title("Minimun Detectable Effect (MDE) Calculator")
 st.write("This app calculates the Minimum Detectable Effect (MDE) for conversion rate tests based on the level of statistical significance and power, number of weeks in the experiment, conversion rate of the control, sample size per week, and number of variants.")
 alpha = st.slider("Statistical significance (α)", 0.01, 0.1, 0.05, 0.01)
