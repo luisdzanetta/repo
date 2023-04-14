@@ -99,6 +99,5 @@ if st.button("Generate table and graph"):
 if st.download_button(
     label="Download table as CSV",
     data=csv,
-    file_name='mde_table.csv',
-    mime='text/csv')
+    file_name='mde_table.csv')
      
