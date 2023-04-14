@@ -45,7 +45,7 @@ def generate_table_and_plot(alpha, beta, num_weeks, control_cr, total_sample_siz
     ax1.set_xlabel('Week', fontsize=6, labelpad=8)
     ax1.set_ylabel('Minimum Detectable Effect (%)', fontsize=6, color='#ED1941', labelpad=10)
     ax1.plot(range(1, num_weeks+1), mde_values, color='#ED1941', linewidth=1.5)
-    ax1.tick_params(axis='y', colors='#ED1941', labelsize=5)
+    #ax1.tick_params(axis='y', colors='#ED1941', labelsize=5)
     ax1.tick_params(axis='x', labelsize=5)
     ax1.yaxis.set_major_locator(MaxNLocator(nbins=5))
           
@@ -53,7 +53,7 @@ def generate_table_and_plot(alpha, beta, num_weeks, control_cr, total_sample_siz
     ax2.bar(range(1, num_weeks+1), total_sample_size_values, alpha=0.6, color='#000000')
     ax2.tick_params('y', colors='#000000')
     ax2.set_ylabel('Total Sample Size', fontsize=6, color='#000000', labelpad=10)
-    ax2.tick_params(axis='y', colors='#000000', labelsize=5)
+    #ax2.tick_params(axis='y', colors='#000000', labelsize=5)
     ax2.yaxis.set_major_locator(MaxNLocator(nbins=5))
     ax1.set_zorder(ax2.get_zorder()+1)
     ax1.patch.set_visible(False)
@@ -61,7 +61,7 @@ def generate_table_and_plot(alpha, beta, num_weeks, control_cr, total_sample_siz
     
     for i, mde in enumerate(mde_values):
         ax1.annotate(f'{mde:.2f}%', xy=(i+1, mde_values[i]), xytext=(-5, 5), textcoords='offset points', fontsize=5, color='#ED1941')
-        ax2.annotate(f'{total_sample_size_values[i]:,.0f}', xy=(i+1, total_sample_size_values[i]), xytext=(5, -10), textcoords='offset points', fontsize=5, color='#000000')
+        #ax2.annotate(f'{total_sample_size_values[i]:,.0f}', xy=(i+1, total_sample_size_values[i]), xytext=(5, -10), textcoords='offset points', fontsize=5, color='#000000')
 
     headers = ["Week", "Sample Size per variant", "Total Sample Size", "MDE"]
     table_df = pd.DataFrame(table, columns=headers)
