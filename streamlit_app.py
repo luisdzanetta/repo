@@ -85,5 +85,27 @@ num_weeks = st.slider("Number of weeks in the experiment", 1, 20, 10, 1)
 control_cr = st.slider("Control group conversion rate (%)", 0.0, 100.0, 5.0, 0.05) / 100
 num_variants = st.slider("Number of variants (including control)", 1, 6, 2, 1)
 total_sample_size = st.number_input("Sample size per week", min_value=0, step=500, format="%i")
-if st.button("Generate table and graph"):
-    generate_table_and_plot(alpha, beta, num_weeks, control_cr, total_sample_size, num_variants)
+
+#if st.button("Generate table and graph"):
+    #generate_table_and_plot(alpha, beta, num_weeks, control_cr, total_sample_size, num_variants)
+    
+if st.button("Calculate"):
+    table_df, fig = generate_table_and_plot(alpha, beta, num_weeks, control_cr/100, sample_size, num_variants)
+    st.markdown(get_table_download_link(table_df), unsafe_allow_html=True)
+    st.markdown(get_plot_download_link(fig), unsafe_allow_html=True)
+    
+    
+def get_table_download_link(df):
+    """Generates a link allowing the data in a given pandas dataframe to be downloaded"""
+    csv = df.to_csv(index=False)
+    b64 = base64.b64encode(csv.encode()).decode()  # some strings <-> bytes conversions necessary here
+    href = f'<a href="data:file/csv;base64,{b64}" download="table.csv">Download table as CSV</a>'
+    return href
+
+def get_plot_download_link(fig):
+    """Generates a link allowing the plot in a given matplotlib figure to be downloaded"""
+    png = io.BytesIO()
+    fig.savefig(png, format='png')
+    b64 = base64.b64encode(png.getvalue()).decode()
+    href = f'<a href="data:image/png;base64,{b64}" download="plot.png">Download plot as PNG</a>'
+    return href
