@@ -89,14 +89,12 @@ total_sample_size = st.number_input("Sample size per week", min_value=1, step=50
 if st.button("Generate table and graph"):
     generate_table_and_plot(alpha, beta, num_weeks, control_cr, total_sample_size, num_variants)
     
-table_df = pd.DataFrame(table, columns=headers)
-
-@st.cache
-def convert_df(df):
+#@st.cache
+#def convert_df(df):
     # IMPORTANT: Cache the conversion to prevent computation on every rerun
-    return df.to_csv().encode('utf-8')
+    #return df.to_csv().encode('utf-8')
 
-csv = convert_df(generate_table_and_plot)
+#csv = convert_df(generate_table_and_plot)
 
-st.download_button(label="Download table as CSV", data=csv, file_name='mde_table.csv')
+#t.download_button(label="Download table as CSV", data=csv, file_name='mde_table.csv')
      
