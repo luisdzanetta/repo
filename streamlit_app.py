@@ -34,13 +34,13 @@ def generate_table_and_plot(alpha, beta, num_weeks, control_cr, total_sample_siz
     fig, ax1 = plt.subplots()
     ax1.plot(range(1, num_weeks+1), mde_values, color='#ED1941')
     ax1.set_xlabel('Week')
-    ax1.set_ylabel('MDE (%)', color='b')
-    ax1.tick_params('y', colors='b')
+    ax1.set_ylabel('MDE (%)', color='#ED1941')
+    ax1.tick_params('y', colors='#ED1941')
 
     ax2 = ax1.twinx()
     ax2.bar(range(1, num_weeks+1), total_sample_size_values, alpha=0.2, color='g')
-    ax2.set_ylabel('Total Sample Size', color='g')
-    ax2.tick_params('y', colors='g')
+    ax2.set_ylabel('Total Sample Size', color='#000000')
+    ax2.tick_params('y', colors='#000000')
 
     headers = ["Week", "Sample Size per variant", "Total Sample Size", "MDE"]
     table_df = pd.DataFrame(table, columns=headers)
