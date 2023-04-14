@@ -52,7 +52,7 @@ st.title("Minimun Detectable Effect (MDE) Calculator")
 st.write("This app calculates the Minimum Detectable Effect (MDE) for conversion rate tests based on the level of statistical significance and power, number of weeks in the experiment, conversion rate of the control, sample size per week, and number of variants.")
 
 alpha = st.slider("Statistical significance (α)", 0.01, 0.1, 0.05, 0.01)
-beta = st.slider("Statistical power (β)", 0.2, 0.95, 08., 0.05)
+beta = st.slider("Statistical power (β)", 0.2, 0.95, 0.8, 0.05)
 num_weeks = st.slider("Number of weeks in the experiment", 1, 20, 10, 1)
 control_cr = st.slider("Control group conversion rate (%)", 0.0, 100.0, 5.0, 0.05) / 100
 total_sample_size = st.slider("Sample size per week", 1000, 1000000, 500000, 1000)
