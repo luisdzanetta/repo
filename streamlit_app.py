@@ -15,8 +15,6 @@ def calculate_mde(alpha, beta, cr, control_cr, sample_size, num_variants):
     mde = (z_alpha + z_beta) * se / pooled_prob
     return mde
 
-session_state = st.session_state.get(table_df)
-
 def generate_table_and_plot(alpha, beta, num_weeks, control_cr, total_sample_size, num_variants):
     table = []
     mde_values = []
@@ -56,12 +54,11 @@ def generate_table_and_plot(alpha, beta, num_weeks, control_cr, total_sample_siz
     ax2.tick_params('y', colors='#000000')
     ax2.set_ylabel('Total Sample Size (x1000)', fontsize=6, color='#000000', labelpad=10)
     ax2.tick_params(axis='y', colors='#000000', labelsize=5)
-    ax2.yaxis.set_major_locator(MaxNLocator(nbins=6))
-
+    ax2.yaxis.set_major_locator(MaxNLocator(nbins=5))
     ax1.set_zorder(ax2.get_zorder()+1)
     ax1.patch.set_visible(False)
-
     plt.tight_layout()
+    
     headers = ["Week", "Sample Size per variant", "Total Sample Size", "MDE"]
     table_df = pd.DataFrame(table, columns=headers)
     table_styles = [
@@ -86,7 +83,7 @@ beta = st.slider("Statistical power (β)", 0.2, 0.95, 0.8, 0.05)
 num_weeks = st.slider("Number of weeks in the experiment", 1, 20, 10, 1)
 control_cr = st.slider("Control group conversion rate (%)", 0.0, 100.0, 5.0, 0.05) / 100
 num_variants = st.slider("Number of variants (including control)", 1, 6, 2, 1)
-total_sample_size = st.number_input("Sample size per week", min_value=1, step=500, format="%i")
+total_sample_size = st.number_input("Sample size per week", min_value=0, step=500, format="%i")
 
 if st.button("Generate table and graph"):
-    generate_table_and_plot(alpha, beta, num_weeks, control_cr, total_sample_size, num_variants)    
+    generate_table_and_plot(alpha, beta, num_weeks, control_cr, total_sample_size, num_variants)
