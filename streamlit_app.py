@@ -96,7 +96,7 @@ def convert_df(df):
     # IMPORTANT: Cache the conversion to prevent computation on every rerun
     return df.to_csv().encode('utf-8')
 
-csv = convert_df(table_html)
+csv = convert_df(generate_table_and_plot)
 
 st.download_button(label="Download table as CSV", data=csv, file_name='mde_table.csv')
      
