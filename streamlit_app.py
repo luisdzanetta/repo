@@ -6,6 +6,7 @@ import seaborn as sns
 import pandas as pd
 from math import sqrt
 from scipy.stats import norm
+
 def calculate_mde(alpha, beta, cr, control_cr, sample_size, num_variants):
     pooled_prob = (control_cr + cr * num_variants) / (num_variants + 1)
     se = sqrt(pooled_prob * (1 - pooled_prob) * (1/sample_size + num_variants/sample_size))
@@ -52,7 +53,6 @@ def generate_table_and_plot(alpha, beta, num_weeks, control_cr, total_sample_siz
     ax2.tick_params('y', colors='#000000')
     ax2.set_ylabel('Total Sample Size (x1000)', fontsize=6, color='#000000', labelpad=10)
     ax2.tick_params(axis='y', colors='#000000', labelsize=5)
-    ax2.yaxis.set_major_locator(MaxNLocator(nbins=5)
     ax2.yaxis.set_major_locator(MaxNLocator(nbins=5))
 
     ax1.set_zorder(ax2.get_zorder()+1)
