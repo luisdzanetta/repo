@@ -45,7 +45,7 @@ def generate_table_and_plot(alpha, beta, num_weeks, control_cr, total_sample_siz
     ax1.grid(alpha=0.3)
     
     ax2 = ax1.twinx()
-    ax2.bar(range(1, num_weeks+1), total_sample_size_values, alpha=0.2, color='#000000', zorder=1)
+    ax2.bar(range(1, num_weeks+1), total_sample_size_values, alpha=1.0, color='#000000', zorder=1)
     ax2.tick_params('y', colors='#000000')
     ax2.set_ylabel('Total Sample Size (x1000)', fontsize=6, color='#000000', labelpad=10)
     ax2.tick_params(axis='y', colors='#000000', labelsize=6)
