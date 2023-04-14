@@ -32,16 +32,16 @@ def generate_table_and_plot(alpha, beta, num_weeks, control_cr, total_sample_siz
     sns.set_style("white")
     sns.color_palette("rocket")
     fig, ax1 = plt.subplots()
-    ax1.set_title("Minimum Detectable Effect vs. Total Sample Size", fontsize=14, fontweight='bold', pad=20)
-    ax1.set_xlabel('Week', fontsize=12, fontweight='bold', labelpad=10)
-    ax1.set_ylabel('Minimum Detectable Effect (%)', fontsize=12, fontweight='bold', color='#ED1941', labelpad=10)
-    ax1.plot(range(1, num_weeks+1), mde_values, color='#ED1941', linewidth=2)
-    ax1.tick_params(axis='y', colors='#ED1941', labelsize=10)
-    ax1.tick_params(axis='x', labelsize=10)
-    ax1.grid(alpha=0.3)
+    fig, ax1 = plt.subplots()
+    ax1.plot(range(1, num_weeks+1), mde_values, color='#ED1941')
+    ax1.set_xlabel('Week')
+    ax1.set_ylabel('MDE (%)', color='#ED1941')
+    ax1.tick_params('y', colors='#ED1941')
 
-    ax2.set_ylabel('Total Sample Size', fontsize=12, fontweight='bold', color='#000000', labelpad=10)
-    ax2.tick_params(axis='y', colors='#000000', labelsize=10)
+    ax2 = ax1.twinx()
+    ax2.bar(range(1, num_weeks+1), total_sample_size_values, alpha=0.2, color='#000000')
+    ax2.set_ylabel('Total Sample Size', color='#000000')
+    ax2.tick_params('y', colors='#000000')
 
     plt.tight_layout()
     st.pyplot(fig)
@@ -63,7 +63,7 @@ def generate_table_and_plot(alpha, beta, num_weeks, control_cr, total_sample_siz
     st.markdown(table_html, unsafe_allow_html=True)
 
 
-    #st.pyplot(fig)
+    st.pyplot(fig)
 
 st.title("Minimun Detectable Effect (MDE) Calculator")
 st.write("This app calculates the Minimum Detectable Effect (MDE) for conversion rate tests based on the level of statistical significance and power, number of weeks in the experiment, conversion rate of the control, sample size per week, and number of variants.")
