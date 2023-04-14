@@ -6,7 +6,6 @@ import seaborn as sns
 import pandas as pd
 from math import sqrt
 from scipy.stats import norm
-import base64
 
 def calculate_mde(alpha, beta, cr, control_cr, sample_size, num_variants):
     pooled_prob = (control_cr + cr * num_variants) / (num_variants + 1)
@@ -78,11 +77,11 @@ def generate_table_and_plot(alpha, beta, num_weeks, control_cr, total_sample_siz
     st.markdown(table_html, unsafe_allow_html=True)
     st.pyplot(fig)
     
-writer = pd.ExcelWriter("mde.xlsx", engine="xlswriter"
-                        
-table_df.to_excel(writer, sheet_name="Sheet1")
-                        
-writer.close()
+def convert_df(df):
+    # IMPORTANT: Cache the conversion to prevent computation on every rerun
+    return df.to_csv().encode('utf-8')
+
+csv = convert_df(table_df)
     
 st.title("Minimun Detectable Effect (MDE) Calculator")
 st.write("This app calculates the Minimum Detectable Effect (MDE) for conversion rate tests based on the level of statistical significance and power, number of weeks in the experiment, conversion rate of the control, sample size per week, and number of variants.")
@@ -95,4 +94,11 @@ total_sample_size = st.number_input("Sample size per week", min_value=0, step=50
 
 if st.button("Generate table and graph"):
     generate_table_and_plot(alpha, beta, num_weeks, control_cr, total_sample_size, num_variants)
+    
+if st.download_button(
+    label="Download table as CSV",
+    data=csv,
+    file_name='mde_table.csv',
+    mime='text/csv',
+)
      
