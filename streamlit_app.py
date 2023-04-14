@@ -35,7 +35,7 @@ def generate_table_and_plot(alpha, beta, num_weeks, control_cr, total_sample_siz
     plt.rcParams['axes.spines.left'] = False
     plt.rcParams['axes.spines.right'] = False
        
-    fig, ax1 = plt.subplots(figsize=(4,3))
+    fig, ax1 = plt.subplots(figsize=(6,3))
            
     ax1.plot(range(1, num_weeks+1), mde_values, color='#ED1941')
     ax1.set_xlabel('Week')
@@ -82,7 +82,7 @@ alpha = st.slider("Statistical significance (α)", 0.01, 0.1, 0.05, 0.01)
 beta = st.slider("Statistical power (β)", 0.2, 0.95, 0.8, 0.05)
 num_weeks = st.slider("Number of weeks in the experiment", 1, 20, 10, 1)
 control_cr = st.slider("Control group conversion rate (%)", 0.0, 100.0, 5.0, 0.05) / 100
-num_variants = st.slider("Number of variants (without control)", 1, 6, 2, 1)
+num_variants = st.slider("Number of variants (including control)", 1, 6, 2, 1)
 total_sample_size = st.number_input("Sample size per week", min_value=1, step=100, format="%i")
 
 if st.button("Generate table and graph"):
