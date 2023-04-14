@@ -47,15 +47,15 @@ def generate_table_and_plot(alpha, beta, num_weeks, control_cr, total_sample_siz
 
     st.pyplot(fig)
 
-st.title("Calculadora de Tamanho de Amostra para Testes A/B")
-st.write("Este app calcula o tamanho de amostra necessário para um teste A/B com um número de variantes e número de semanas especificados. O tamanho de amostra é calculado com base em um nível de significância, poder estatístico, taxa de conversão do grupo de controle e tamanho total da amostra. O resultado é apresentado em uma tabela e um gráfico.")
+st.title("Minimun Detectable Effect (MDE) Calculator")
+st.write("This app calculates the Minimum Detectable Effect (MDE) for conversion rate tests based on the level of statistical significance and power, number of weeks in the experiment, conversion rate of the control, sample size per week, and number of variants.")
 
-alpha = st.slider("Nível de significância (alfa)", 0.01, 0.1, 0.05, 0.01)
-beta = st.slider("Poder estatístico (beta)", 0.01, 0.3, 0.2, 0.05)
-num_weeks = st.slider("Número de semanas", 1, 20, 10, 1)
+alpha = st.slider("Nível de significância (α)", 0.01, 0.1, 0.05, 0.01)
+beta = st.slider("Poder estatístico (β)", 0.01, 0.3, 0.2, 0.05)
+num_weeks = st.slider("Número de semanas de experimento", 1, 20, 10, 1)
 control_cr = st.slider("Taxa de conversão do grupo de controle (%)", 0.0, 100.0, 5.0, 0.05) / 100
-total_sample_size = st.slider("Tamanho total da amostra", 1000, 1000000, 500000, 1000)
-num_variants = st.slider("Número de variantes", 1, 6, 2, 1)
+total_sample_size = st.slider("Tamanho total da amostra por semana", 1000, 1000000, 500000, 1000)
+num_variants = st.slider("Número de variantes (incluindo controle)", 1, 6, 2, 1)
 
 if st.button("Gerar tabela e gráfico"):
     generate_table_and_plot(alpha, beta, num_weeks, control_cr, total_sample_size, num_variants)
