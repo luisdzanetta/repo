@@ -29,7 +29,7 @@ def generate_table_and_plot(alpha, beta, num_weeks, control_cr, total_sample_siz
         mde_values.append(mde)
         total_sample_size_values.append(week_total_sample_size)
 
-    sns.set_style("darkgrid", {"grid.color": ".6", "grid.linestyle": ":"})
+    sns.set_style("darkgrid", {"grid.color": ".1", "grid.linestyle": ":"})
     fig, ax1 = plt.subplots()
     ax1.plot(range(1, num_weeks+1), mde_values, 'b-')
     ax1.set_xlabel('Week')
