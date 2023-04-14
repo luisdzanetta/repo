@@ -86,8 +86,8 @@ control_cr = st.slider("Control group conversion rate (%)", 0.0, 100.0, 5.0, 0.0
 num_variants = st.slider("Number of variants (including control)", 1, 6, 2, 1)
 total_sample_size = st.number_input("Sample size per week", min_value=0, step=500, format="%i")
 
-#if st.button("Generate table and graph"):
-    #generate_table_and_plot(alpha, beta, num_weeks, control_cr, total_sample_size, num_variants)
+if st.button("Generate table and graph"):
+    generate_table_and_plot(alpha, beta, num_weeks, control_cr, total_sample_size, num_variants)
     
 if st.button("Calculate"):
     table_df, fig = generate_table_and_plot(alpha, beta, num_weeks, control_cr/100, sample_size, num_variants)
