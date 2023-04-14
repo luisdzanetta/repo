@@ -42,7 +42,10 @@ def generate_table_and_plot(alpha, beta, num_weeks, control_cr, total_sample_siz
     ax2.tick_params('y', colors='g')
 
     headers = ["Week", "Sample Size per variant", "Total Sample Size", "MDE"]
+    format_str = "{:,.0f}"  # custom formatting string for thousands separator
     table_df = pd.DataFrame(table, columns=headers)
+    table_df["Sample Size per variant"] = table_df["Sample Size per variant"].map(format_str.format)
+    table_df["Total Sample Size"] = table_df["Total Sample Size"].map(format_str.format)
     st.table(table_df)
 
     st.pyplot(fig)
