@@ -41,9 +41,23 @@ def generate_table_and_plot(alpha, beta, num_weeks, control_cr, total_sample_siz
     ax2.set_ylabel('Total Sample Size', color='g')
     ax2.tick_params('y', colors='g')
 
+   # Cabeçalhos das colunas
     headers = ["Week", "Sample Size per variant", "Total Sample Size", "MDE"]
+
+    # Criar um DataFrame Pandas
     table_df = pd.DataFrame(table, columns=headers)
-    st.table(table_df)
+
+    # Formatar as colunas "Sample Size per variant" e "Total Sample Size"
+    table_df["Sample Size per variant"] = table_df["Sample Size per variant"].map('{:,.0f}'.format)
+    table_df["Total Sample Size"] = table_df["Total Sample Size"].map('{:,.0f}'.format)
+
+    # Aplicar o estilo de formatação à tabela para centralizar os valores
+    styled_table = table_df.style\
+    .set_properties(**{'text-align': 'center'})\
+    .set_table_styles([{'selector': 'th', 'props': [('text-align', 'center')]}])
+
+    # Exibir a tabela formatada
+    st.write(styled_table)
 
     st.pyplot(fig)
 
