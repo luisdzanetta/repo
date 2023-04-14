@@ -30,7 +30,7 @@ def generate_table_and_plot(alpha, beta, num_weeks, control_cr, total_sample_siz
     sns.set_style("white")
     sns.color_palette("rocket")
     
-    fig, ax1 = plt.subplots(figsize=(4,4))
+    fig, ax1 = plt.subplots(figsize=(4,3))
     
     ax1.plot(range(1, num_weeks+1), mde_values, color='#ED1941')
     ax1.set_xlabel('Week')
