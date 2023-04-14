@@ -17,6 +17,9 @@ def calculate_mde(alpha, beta, cr, control_cr, sample_size, num_variants):
     return mde
 
 def generate_table_and_plot(alpha, beta, num_weeks, control_cr, total_sample_size, num_variants):
+    if not any(variant_cr >= control_cr + minimum_detectable_effect * control_cr for variant_cr in variant_crs):
+        print("Nenhuma das variantes é significativamente diferente do grupo de controle.")
+        return None
     table = []
     mde_values = []
     total_sample_size_values = []
