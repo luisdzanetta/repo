@@ -61,7 +61,7 @@ def generate_table_and_plot(alpha, beta, num_weeks, control_cr, total_sample_siz
     plt.tight_layout()
     
     for i, mde in enumerate(mde_values):
-        ax1.annotate(f'{mde:.2f}%', xy=(i+1, mde_values[i]), xytext=(-5, 5), textcoords='offset points', fontsize=8, color='#ED1941')
+        ax1.annotate(f'{mde:.2f}%', xy=(i+1, mde_values[i]), xytext=(-5, 5), textcoords='offset points', fontsize=7, color='#ED1941')
         #ax2.annotate(f'{total_sample_size_values[i]:,.0f}', xy=(i+1, total_sample_size_values[i]), xytext=(5, -10), textcoords='offset points', fontsize=5, color='#000000')
 
     headers = ["Week", "Sample Size per variant", "Total Sample Size", "MDE"]
