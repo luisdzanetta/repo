@@ -44,8 +44,7 @@ def generate_table_and_plot(alpha, beta, num_weeks, control_cr, total_sample_siz
     ax2.tick_params('y', colors='#000000')
 
     plt.tight_layout()
-    st.pyplot(fig)
-
+    
     headers = ["Week", "Sample Size per variant", "Total Sample Size", "MDE"]
     table_df = pd.DataFrame(table, columns=headers)
     table_styles = [
@@ -61,7 +60,6 @@ def generate_table_and_plot(alpha, beta, num_weeks, control_cr, total_sample_siz
         .render()
     
     st.markdown(table_html, unsafe_allow_html=True)
-
 
     st.pyplot(fig)
 
