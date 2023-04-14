@@ -76,7 +76,8 @@ def generate_table_and_plot(alpha, beta, num_weeks, control_cr, total_sample_siz
     
     st.markdown(table_html, unsafe_allow_html=True)
     st.pyplot(fig)
-    
+
+@st.cache
 def convert_df(df):
     # IMPORTANT: Cache the conversion to prevent computation on every rerun
     return df.to_csv().encode('utf-8')
