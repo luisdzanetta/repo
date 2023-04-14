@@ -39,8 +39,8 @@ def generate_table_and_plot(alpha, beta, num_weeks, control_cr, total_sample_siz
     ax1.set_xlabel('Week', fontsize=8, fontweight='bold', labelpad=10)
     ax1.set_ylabel('Minimum Detectable Effect (%)', fontsize=8, fontweight='bold', color='#ED1941', labelpad=10)
     ax1.plot(range(1, num_weeks+1), mde_values, color='#ED1941', linewidth=2)
-    ax1.tick_params(axis='y', colors='#ED1941', labelsize=10)
-    ax1.tick_params(axis='x', labelsize=10)
+    ax1.tick_params(axis='y', colors='#ED1941', labelsize=8)
+    ax1.tick_params(axis='x', labelsize=8)
     ax1.grid(alpha=0.3)
 
     ax2 = ax1.twinx()
@@ -48,7 +48,7 @@ def generate_table_and_plot(alpha, beta, num_weeks, control_cr, total_sample_siz
     ax2.set_ylabel('Total Sample Size', color='#000000')
     ax2.tick_params('y', colors='#000000')
     ax2.set_ylabel('Total Sample Size', fontsize=8, fontweight='bold', color='#000000', labelpad=10)
-    ax2.tick_params(axis='y', colors='#000000', labelsize=10)
+    ax2.tick_params(axis='y', colors='#000000', labelsize=8)
 
     plt.tight_layout()
 
