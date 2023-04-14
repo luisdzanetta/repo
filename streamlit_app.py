@@ -43,6 +43,8 @@ def generate_table_and_plot(alpha, beta, num_weeks, control_cr, total_sample_siz
 
     headers = ["Week", "Sample Size per variant", "Total Sample Size", "MDE"]
     table_df = pd.DataFrame(table, columns=headers)
+    table_df["Sample Size per variant"] = table_df["Sample Size per variant"].map('{:,.0f}'.format)
+    table_df["Total Sample Size"] = table_df["Total Sample Size"].map('{:,.0f}'.format)
     st.table(table_df)
 
     st.pyplot(fig)
