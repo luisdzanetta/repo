@@ -54,7 +54,6 @@ def generate_table_and_plot(alpha, beta, num_weeks, control_cr, total_sample_siz
     ax2.set_ylabel('Total Sample Size (x1000)', fontsize=6, color='#000000', labelpad=10)
     ax2.tick_params(axis='y', colors='#000000', labelsize=5)
     ax2.yaxis.set_major_locator(MaxNLocator(nbins=5)
-    
     ax1.set_zorder(ax2.get_zorder()+1)
     ax1.patch.set_visible(False)
 
