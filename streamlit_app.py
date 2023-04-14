@@ -16,7 +16,7 @@ def calculate_mde(alpha, beta, cr, control_cr, sample_size, num_variants):
     mde = (z_alpha + z_beta) * se / pooled_prob
     return mde
 
-session_state = st.session_state.get(table_df=None)
+session_state = st.session_state.get()
 
 def generate_table_and_plot(alpha, beta, num_weeks, control_cr, total_sample_size, num_variants):
     table = []
