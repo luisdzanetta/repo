@@ -17,9 +17,6 @@ def calculate_mde(alpha, beta, cr, control_cr, sample_size, num_variants):
     return mde
 
 def generate_table_and_plot(alpha, beta, num_weeks, control_cr, total_sample_size, num_variants):
-    if not any(variant_cr >= control_cr + minimum_detectable_effect * control_cr for variant_cr in variant_crs):
-        print("Nenhuma das variantes é significativamente diferente do grupo de controle.")
-        return None
     table = []
     mde_values = []
     total_sample_size_values = []
@@ -92,23 +89,4 @@ total_sample_size = st.number_input("Sample size per week", min_value=0, step=50
 
 if st.button("Generate table and graph"):
     generate_table_and_plot(alpha, beta, num_weeks, control_cr, total_sample_size, num_variants)
-    
-if st.button("Calculate"):
-    table_df, fig = generate_table_and_plot(alpha, beta, num_weeks, control_cr, total_sample_size, num_variants)
-    st.markdown(get_table_download_link(table_df), unsafe_allow_html=True)
-    st.markdown(get_plot_download_link(fig), unsafe_allow_html=True)
-        
-def get_table_download_link(df):
-    """Generates a link allowing the data in a given pandas dataframe to be downloaded"""
-    csv = df.to_csv(index=False)
-    b64 = base64.b64encode(csv.encode()).decode()  # some strings <-> bytes conversions necessary here
-    href = f'<a href="data:file/csv;base64,{b64}" download="table.csv">Download table as CSV</a>'
-    return href
-
-def get_plot_download_link(fig):
-    """Generates a link allowing the plot in a given matplotlib figure to be downloaded"""
-    png = io.BytesIO()
-    fig.savefig(png, format='png')
-    b64 = base64.b64encode(png.getvalue()).decode()
-    href = f'<a href="data:image/png;base64,{b64}" download="plot.png">Download plot as PNG</a>'
-    return href
+     
