@@ -31,6 +31,10 @@ def generate_table_and_plot(alpha, beta, num_weeks, control_cr, total_sample_siz
     sns.color_palette("rocket")
     
     fig, ax1 = plt.subplots(figsize=(4,3))
+    ax1.spines['top'].set_color('none')
+    ax1.spines['bottom'].set_color('none')
+    ax1.spines['left'].set_color('none')
+    ax1.spines['right'].set_color('none')
     plt.subplots_adjust(top=0.4, bottom=0.1, left=0.1, right=0.4)
         
     ax1.plot(range(1, num_weeks+1), mde_values, color='#ED1941')
@@ -43,11 +47,7 @@ def generate_table_and_plot(alpha, beta, num_weeks, control_cr, total_sample_siz
     ax1.plot(range(1, num_weeks+1), mde_values, color='#ED1941', linewidth=1.5)
     ax1.tick_params(axis='y', colors='#ED1941', labelsize=5)
     ax1.tick_params(axis='x', labelsize=5)
-    ax1.spines['top'].set_color('none')
-    ax1.spines['bottom'].set_color('none')
-    ax1.spines['left'].set_color('none')
-    ax1.spines['right'].set_color('none')
-       
+          
     ax2 = ax1.twinx()
     ax2.bar(range(1, num_weeks+1), total_sample_size_values, alpha=0.6, color='#000000')
     ax2.tick_params('y', colors='#000000')
