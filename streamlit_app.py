@@ -29,7 +29,6 @@ def generate_table_and_plot(alpha, beta, num_weeks, control_cr, total_sample_siz
         
     sns.set_style("white")
     plt.rcParams['axes.spines.top'] = False
-    plt.rcParams['axes.spines.bottom'] = False
     plt.rcParams['axes.spines.left'] = False
     plt.rcParams['axes.spines.right'] = False
        
