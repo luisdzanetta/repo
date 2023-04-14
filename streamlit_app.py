@@ -30,7 +30,7 @@ def generate_table_and_plot(alpha, beta, num_weeks, control_cr, total_sample_siz
     sns.set_style("white")
     sns.color_palette("rocket")
     
-    fig = plt.figure(figsize=(10,5))
+    fig = plt.figure(figsize=(5,5))
     #ax1 = fig.add_suplot()
     fig, ax1 = plt.subplots()
     
