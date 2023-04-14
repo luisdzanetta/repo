@@ -49,8 +49,7 @@ def generate_table_and_plot(alpha, beta, num_weeks, control_cr, total_sample_siz
     ax2.tick_params('y', colors='#000000')
     ax2.set_ylabel('Total Sample Size (x1000)', fontsize=6, color='#000000', labelpad=10)
     ax2.tick_params(axis='y', colors='#000000', labelsize=6)
-    ax2.yaxis.set_major_locator(tick.LinearLocator(primary_ticks))
-    plot.set_zorder(ax2.get_zorder()+1)
+    plt.set_zorder(ax2.get_zorder()+1)
 
     plt.tight_layout()
 
