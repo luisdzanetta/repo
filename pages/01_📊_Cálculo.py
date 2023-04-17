@@ -1,7 +1,7 @@
 import streamlit as st
 from scipy.stats import norm
 
-st.title("Cálculo utilizado")
+st.title("Cálculo")
 
 st.write("**Equação para cálculo do MDE**")
 st.latex(r'''
