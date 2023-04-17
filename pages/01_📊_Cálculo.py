@@ -4,7 +4,7 @@ import streamlit as st
 st.title("Equações utilizadas")
 
 #Equação MDE
-st.write(f'<div style="text-align: left">{r"$$\text{{MDE}} = \\frac{{(z_{{\\alpha/2}} + z_\\beta) \\cdot \\text{{SE}}}}{{\\text{{pooled\_prob}}}}$$"}</div>', unsafe_allow_html=True)
+st.write(f'<div style="text-align: left">{r"$$\text{{MDE}} = \\\\frac{{(z_{{\\\\alpha/2}} + z_\\\\beta) \\\\cdot \\\\text{{SE}}}}{{\\\\text{{pooled\_prob}}}}$$"}</div>', unsafe_allow_html=True)
 
 st.write('**Onde:**')
 
