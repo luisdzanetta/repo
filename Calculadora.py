@@ -79,6 +79,7 @@ def generate_table_and_plot(alpha, beta, num_weeks, control_cr, total_sample_siz
         .render()
     
     st.markdown(table_html, unsafe_allow_html=True)
+    st.write(" ")
     st.pyplot(fig)
     
 st.title("Calculadora de Mínimo Efeito Detectável")
