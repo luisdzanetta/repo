@@ -1,22 +1,29 @@
 import streamlit as st
 
-#Equações
 st.title("Equações utilizadas")
 
-#Equação MDE
-st.write(f'<div style="text-align: left">{r"$$\text{{MDE}} = \\\\frac{{(z_{{\\\\alpha/2}} + z_\\\\beta) \\\\cdot \\\\text{{SE}}}}{{\\\\text{{pooled\_prob}}}}$$"}</div>', unsafe_allow_html=True)
+with st.beta_container():
+    st.markdown("""
+        <div style="text-align: left">
+        
+        $$\text{MDE} = \frac{(z_{\\alpha/2} + z_\\beta) \\cdot \\text{SE}}{\\text{pooled_prob}}$$
+        
+        </div>
+    """, unsafe_allow_html=True)
 
-st.write('**Onde:**')
+with st.beta_container():
+    st.markdown("""
+        <div style="text-align: left">
+        
+        **Onde:**
 
-#Equação SE
-st.write(f'<div style="text-align: left">{r"$$\text{{SE}} = \\sqrt{{\\text{{pooled\_prob}} \\cdot (1 - \\text{{pooled\_prob}}) \\cdot \\left(\\frac{{1}}{{\\text{{sample\_size}}}} + \\frac{{\\text{{num\_variants}}}}{{\\text{{sample\_size}}}}\\right)}}$$"}</div>', unsafe_allow_html=True)
+        $$\\text{SE} = \\sqrt{\\text{pooled_prob} \\cdot (1 - \\text{pooled_prob}) \\cdot \\left(\\frac{1}{\\text{sample_size}} + \\frac{\\text{num_variants}}{\\text{sample_size}}\\right)}$$
 
-#Equação pooled prob
-st.write(f'<div style="text-align: left">{r"$$\\text{{pooled\_prob}} = \\frac{{\\text{{control\_cr}} + \\text{{cr}} \\cdot \\text{{num\_variants}}}}{{\\text{{num\_variants}} + 1}}$$"}</div>', unsafe_allow_html=True)
+        $$\\text{pooled_prob} = \\frac{\\text{control_cr} + \\text{cr} \\cdot \\text{num_variants}}{\\text{num_variants} + 1}$$
 
-#Equação z de alpha
-st.write(f'<div style="text-align: left">{r"$$z_{{\\alpha/2}} = |{{\\text{{norm.ppf}}(\\alpha/2)}}|$$"}</div>', unsafe_allow_html=True)
+        $$\\text{z}_{\\alpha/2} = |{\\text{norm.ppf}}(\\alpha/2)|$$
 
-#Equação z de beta
-st.write(f'<div style="text-align: left">{r"$$z_\\beta = |{{\\text{{norm.ppf}}(\\beta)}}|$$"}</div>', unsafe_allow_html=True)
-
+        $$\\text{z}_\\beta = |{\\text{norm.ppf}}(\\beta)|$$
+        
+        </div>
+    """, unsafe_allow_html=True)
