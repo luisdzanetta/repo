@@ -22,7 +22,7 @@ $$\text{SE} = \sqrt{\text{pooled\_prob} \cdot (1 - \text{pooled\_prob}) \cdot \l
 #Equação pooled prob
 st.markdown(r'''
 <div style="text-align: left">
-\text{pooled\_prob} = \frac{\text{control\_cr} + \text{cr} \cdot \text{num\_variants}}{\text{num\_variants} + 1}
+$$\text{pooled\_prob} = \frac{\text{control\_cr} + \text{cr} \cdot \text{num\_variants}}{\text{num\_variants} + 1}$$
 </div>
 ''', unsafe_allow_html=True)
 
