@@ -20,4 +20,4 @@ st.markdown("O erro que resulta quando a hipótese nula é falsamente aceita.")
 
 #Hipótese nula
 st.markdown("**Hipótese nula:**")
-st.markdown("Normalmente, a hipótese "sem diferença" ou "sem associação" a ser testada (geralmente por meio de um teste de significância) contra uma hipótese alternativa que postula diferença ou associação diferente de zero.")
+st.markdown("Normalmente, a hipótese 'sem diferença' ou 'sem associação' a ser testada (geralmente por meio de um teste de significância) contra uma hipótese alternativa que postula diferença ou associação diferente de zero.")
