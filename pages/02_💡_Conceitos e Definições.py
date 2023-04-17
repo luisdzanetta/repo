@@ -1,6 +1,6 @@
 import streamlit as st
 
-st.title("Concepts & Definitions")
+st.title("Conceitos e Definições")
 
 #Nível de significância
 st.markdown("**Nível de Significância:**")
