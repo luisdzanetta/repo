@@ -84,7 +84,7 @@ def generate_table_and_plot(alpha, beta, num_weeks, control_cr, total_sample_siz
 st.title("Calculadora de Mínimo Efeito Detectável")
 st.write("Este aplicativo calcula o Efeito Mínimo Detectável (MDE) para testes de taxa de conversão com base no nível de significância estatística e poder, número de semanas no experimento, taxa de conversão do controle, tamanho da amostra por semana e número de variantes.")
 alpha = st.slider("Alfa (α)", 0.01, 0.1, 0.05, 0.01)
-beta = st.slider("Beta (β)", 0.1, 0.5 0.2, 0.05)
+beta = st.slider("Beta (β)", 0.1, 0.5, 0.2, 0.05)
 num_weeks = st.slider("Número de semanas do experimento", 1, 20, 10, 1)
 control_cr = st.slider("Conversão do grupo controle (%)", 0.0, 100.0, 5.0, 0.05) / 100
 num_variants = st.slider("Número de variantes (excluindo o controle)", 1, 6, 2, 1)
