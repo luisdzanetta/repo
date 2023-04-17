@@ -7,7 +7,7 @@ st.latex(r'''
 \text{MDE} = \frac{(z_{\alpha/2} + z_\beta) \cdot SE}{\text{pooled\_prob}}
 ''')
 
-st.write("**Onde**:)
+st.write("**Onde:**")
          
 st.write("**z_alpha/2** é o valor crítico da distribuição normal padrão correspondente ao nível de significância alpha/2. Esse valor é calculado usando a função abs(norm.ppf(alpha/2)). Ele representa a área sob a curva normal à direita de z_alpha/2 para um teste bicaudal com nível de significância alpha.")
 
