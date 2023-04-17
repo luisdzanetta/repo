@@ -1,5 +1,8 @@
 import streamlit as st
 
+#Equações
+st.title("Equações utilizadas")
+
 #Equação MDE
 st.latex(r'''
 \text{MDE} = \frac{(z_{\alpha/2} + z_\beta) \cdot SE}{\text{pooled\_prob}}
