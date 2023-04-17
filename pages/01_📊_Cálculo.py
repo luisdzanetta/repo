@@ -3,6 +3,7 @@ from scipy.stats import norm
 
 st.title("Cálculo utilizado")
 
+st.write("**Equação para cálculo do MDE**")
 st.latex(r'''
 \text{MDE} = \frac{(z_{\alpha/2} + z_\beta) \cdot SE}{\text{pooled\_prob}}
 ''')
