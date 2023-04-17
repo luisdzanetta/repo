@@ -18,7 +18,7 @@ st.write("**Erro tipo II:** O erro que resulta quando a hipótese nula é falsam
 st.write("**Hipótese nula:** Normalmente, a hipótese 'sem diferença' ou 'sem associação' a ser testada (geralmente por meio de um teste de significância) contra uma hipótese alternativa que postula diferença ou associação diferente de zero.")
 
 #Efeito Mínimo Detectável (MDE)
-st.write("**Efeito Mínimo Detectável (MDE):**é um cálculo que estima a menor melhoria que seu teste será capaz de detectar. Ele determina a 'sensibilidade' de um experimento.")
+st.write("**Efeito Mínimo Detectável (MDE):** É um cálculo que estima a menor melhoria que seu teste será capaz de detectar. Ele determina a 'sensibilidade' de um experimento.")
          
 #Nível de significância
 st.write("**Nível de Significância:** O nível de probabilidade em que se concorda em rejeitar a hipótese nula. Por convenção, 0.05.")
