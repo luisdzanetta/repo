@@ -7,7 +7,7 @@ st.title("Conceitos e Definições")
 st.write("**Nível de Significância:** O nível de probabilidade em que se concorda em rejeitar a hipótese nula. Por convenção, 0.05.")
 
 #Poder
-st.write("**Poder:** A probabilidade de rejeitar a hipótese nula quando ela é falsa. O poder fornece um método de discriminação entre testes concorrentes da mesma hipótese, sendo preferido o teste com maior poder. É também a base dos procedimentos para estimar o tamanho da amostra necessária para detectar um efeito de uma determinada magnitude."
+st.write("**Poder:** A probabilidade de rejeitar a hipótese nula quando ela é falsa. O poder fornece um método de discriminação entre testes concorrentes da mesma hipótese, sendo preferido o teste com maior poder. É também a base dos procedimentos para estimar o tamanho da amostra necessária para detectar um efeito de uma determinada magnitude.")
 
 #Alfa
 st.write("**Alfa (α):** A probabilidade do erro tipo I.")
