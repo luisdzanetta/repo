@@ -19,4 +19,4 @@ st.write(f'<div style="text-align: left">{r"$$z_{{\\alpha/2}} = |{{\\text{{norm.
 
 #Equação z de beta
 st.write(f'<div style="text-align: left">{r"$$z_\\beta = |{{\\text{{norm.ppf}}(\\beta)}}|$$"}</div>', unsafe_allow_html=True)
-a
+
