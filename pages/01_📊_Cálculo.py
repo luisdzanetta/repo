@@ -11,7 +11,7 @@ st.write("**Onde:**")
          
 st.write("**z_alpha/2** é o valor crítico da distribuição normal padrão correspondente ao nível de significância alpha/2. Esse valor é calculado usando a função abs(norm.ppf(alpha/2)). Ele representa a área sob a curva normal à direita de z_alpha/2 para um teste bicaudal com nível de significância alpha.")
 
-st.write("**z_beta** é o valor crítico da distribuição normal padrão correspondente ao poder do teste beta. Esse valor é calculado usando a função abs(norm.ppf(beta)). Ele representa a área sob a curva normal à esquerda de z_beta para um teste bicaudal com poder beta."
+st.write("**z_beta** é o valor crítico da distribuição normal padrão correspondente ao poder do teste beta. Esse valor é calculado usando a função abs(norm.ppf(beta)). Ele representa a área sob a curva normal à esquerda de z_beta para um teste bicaudal com poder beta.")
 
 st.write("**SE** é o erro padrão da diferença entre as taxas de conversão das variantes e do grupo de controle. Ele é calculado usando a fórmula:")
 
