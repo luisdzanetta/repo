@@ -19,7 +19,8 @@ st.write("**SE** é o erro padrão da diferença entre as taxas de conversão da
 st.latex(r'''
 \text{SE} = \sqrt{\text{pooled\_prob} \cdot (1 - \text{pooled\_prob}) \cdot \left(\frac{1}{\text{sample\_size}} + \frac{\text{num\_variants}}{\text{sample\_size}}\right)}''')
 
-
+st.write("Onde pooled_prob é a taxa de conversão combinada para todas as variantes e o grupo de controle, calculada como:")
 st.latex(r'''\text{pooled\_prob} = \frac{\text{control\_cr} + \text{cr} \cdot \text{num\_variants}}{\text{num\_variants} + 1}''')
 
+st.write("E **sample_size** é o tamanho da amostra para cada variante (ou para o grupo de controle, caso num_variants seja maior que 0), ou seja, o número de usuários que serão expostos a cada variante (ou ao grupo de controle) no teste A/B. num_variants é o número de variantes a serem testadas (além do grupo de controle).")
 
