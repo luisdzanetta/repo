@@ -81,14 +81,14 @@ def generate_table_and_plot(alpha, beta, num_weeks, control_cr, total_sample_siz
     st.markdown(table_html, unsafe_allow_html=True)
     st.pyplot(fig)
     
-st.title("Minimun Detectable Effect (MDE) Calculator")
-st.write("This app calculates the Minimum Detectable Effect (MDE) for conversion rate tests based on the level of statistical significance and power, number of weeks in the experiment, conversion rate of the control, sample size per week, and number of variants.")
-alpha = st.slider("Statistical significance (α)", 0.01, 0.1, 0.05, 0.01)
-beta = st.slider("Statistical power (β)", 0.2, 0.95, 0.8, 0.05)
-num_weeks = st.slider("Number of weeks in the experiment", 1, 20, 10, 1)
-control_cr = st.slider("Control group conversion rate (%)", 0.0, 100.0, 5.0, 0.05) / 100
-num_variants = st.slider("Number of variants (including control)", 1, 6, 2, 1)
+st.title("Calculadora de Mínimo Efeito Detectável")
+st.write("Este aplicativo calcula o Efeito Mínimo Detectável (MDE) para testes de taxa de conversão com base no nível de significância estatística e poder, número de semanas no experimento, taxa de conversão do controle, tamanho da amostra por semana e número de variantes.")
+alpha = st.slider("Alfa (α)", 0.01, 0.1, 0.05, 0.01)
+beta = st.slider("Beta (β)", 0.2, 0.95, 0.8, 0.05)
+num_weeks = st.slider("Números de semana do experimento", 1, 20, 10, 1)
+control_cr = st.slider("Conversão do grupo controle (%)", 0.0, 100.0, 5.0, 0.05) / 100
+num_variants = st.slider("Número de variantes (incluindo o controle)", 1, 6, 2, 1)
 total_sample_size = st.number_input("Sample size per week", min_value=1, step=100, format="%i")
 
-if st.button("Generate table and graph"):
+if st.button("Gerar tabela e gráfico!"):
     generate_table_and_plot(alpha, beta, num_weeks, control_cr, total_sample_size, num_variants)
