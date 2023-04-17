@@ -9,14 +9,17 @@ st.write("**Alfa (α):** A probabilidade do erro tipo I.")
 st.write("**Beta (β):** A probabilidade do erro tipo II.")
 
 #Erro tipo I
-st.write("**Erro tipo I:** O erro que resulta quando a hipótese nula é falsamente rejeitada.")
+st.write("**Erro tipo I:** O erro que resulta quando a hipótese nula é falsamente rejeitada (falso positivo).")
 
 #Erro tipo II
-st.write("**Erro tipo II:** O erro que resulta quando a hipótese nula é falsamente aceita.")
+st.write("**Erro tipo II:** O erro que resulta quando a hipótese nula é falsamente aceita (Falso negativo).")
 
 #Hipótese nula
 st.write("**Hipótese nula:** Normalmente, a hipótese 'sem diferença' ou 'sem associação' a ser testada (geralmente por meio de um teste de significância) contra uma hipótese alternativa que postula diferença ou associação diferente de zero.")
 
+#Efeito Mínimo Detectável (MDE)
+st.write("**Efeito Mínimo Detectável (MDE):**é um cálculo que estima a menor melhoria que seu teste será capaz de detectar. Ele determina a 'sensibilidade' de um experimento.")
+         
 #Nível de significância
 st.write("**Nível de Significância:** O nível de probabilidade em que se concorda em rejeitar a hipótese nula. Por convenção, 0.05.")
 
@@ -27,6 +30,5 @@ st.write("**Poder:** A probabilidade de rejeitar a hipótese nula quando ela é 
 st.write("**Tamanho amostral:** O número de indivíduos a serem incluídos em uma investigação. Normalmente escolhido para que o estudo tenha um poder particular de detectar um efeito de um tamanho particular.")
 
 #Teste de hipóteses
-st.write("**Teste de hipóteses:** Um termo geral para o procedimento de avaliar se os dados da amostra são consistentes ou não com as declarações feitas sobre a população.")
-         
+st.write("**Teste de hipóteses:** Um termo geral para o procedimento de avaliar se os dados da amostra são consistentes ou não com as declarações feitas sobre a população.")       
 
