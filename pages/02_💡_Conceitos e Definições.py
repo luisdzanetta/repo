@@ -4,7 +4,7 @@ st.title("Conceitos e Definições")
 
 #Nível de significância
 st.markdown("**Nível de Significância:**")
-st.write"O nível de probabilidade em que se concorda em rejeitar a hipótese nula. Por convenção, 0.05")
+st.write("O nível de probabilidade em que se concorda em rejeitar a hipótese nula. Por convenção, 0.05")
 
 #Alfa
 st.markdown("**Alfa (α):**")
