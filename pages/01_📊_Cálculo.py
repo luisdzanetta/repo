@@ -8,6 +8,8 @@ st.latex(r'''
 \text{MDE} = \frac{(z_{\alpha/2} + z_\beta) \cdot SE}{\text{pooled\_prob}}
 ''')
 
+st.write('**
+
 #Equação SE
 st.latex(r'''
 \text{SE} = \sqrt{\text{pooled\_prob} \cdot (1 - \text{pooled\_prob}) \cdot \left(\frac{1}{\text{sample\_size}} + \frac{\text{num\_variants}}{\text{sample\_size}}\right)}''')
