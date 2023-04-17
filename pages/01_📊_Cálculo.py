@@ -8,7 +8,7 @@ st.latex(r'''
 \text{MDE} = \frac{(z_{\alpha/2} + z_\beta) \cdot SE}{\text{pooled\_prob}}
 ''')
 
-st.write('**
+st.write('**Onde:**')
 
 #Equação SE
 st.latex(r'''
