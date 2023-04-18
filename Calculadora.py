@@ -10,7 +10,7 @@ from scipy.stats import norm
 def calculate_mde(alpha, beta, cr, control_cr, sample_size, num_variants):
     #pooled_prob = (control_cr + cr * num_variants) / (num_variants + 1)
     pooled_prob = (control_cr + cr * num_variants) / (num_variants)
-    se = sqrt(pooled_prob * (1 - pooled_prob) * (1/sample_size + num_variants/sample_size))
+    se = sqrt(pooled_prob * (1 - pooled_prob) * ((1 / sample_size) + (num_variants/sample_size)))
     z_alpha = abs(norm.ppf(alpha/2))
     z_beta = abs(norm.ppf(beta))
     #mde = (z_alpha + z_beta) * se / (control_cr + cr * num_variants)
