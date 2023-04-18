@@ -23,7 +23,7 @@ def generate_table_and_plot(alpha, beta, num_weeks, control_cr, total_sample_siz
     total_sample_size_values = []
     for week in range(1, num_weeks+1):
         week_total_sample_size = total_sample_size * week
-        week_sample_size = week_total_sample_size / (num_variants + 1)
+        week_sample_size = week_total_sample_size / (num_variants)
         mde = calculate_mde(alpha, beta, control_cr * (1 + 0.01*week), control_cr, week_sample_size, num_variants) * 100
         week_total_sample_size_str = format(week_total_sample_size, ".0f")
         week_sample_size_str = format(week_sample_size, ".0f")
@@ -90,7 +90,7 @@ alpha = st.slider("Alfa (α)", 0.01, 0.1, 0.05, 0.01)
 beta = st.slider("Beta (β)", 0.1, 0.8, 0.2, 0.05)
 num_weeks = st.slider("Número de semanas do experimento", 1, 20, 10, 1)
 control_cr = st.slider("Conversão do grupo controle (%)", 0.0, 100.0, 5.0, 0.05) / 100
-num_variants = st.slider("Número de variantes (excluindo o controle)", 1, 5, 1, 1)
+num_variants = st.slider("Número de variantes (incluindo o controle)", 1, 5, 1, 1)
 total_sample_size = st.number_input("Amostra por semana", min_value=1, step=100, format="%i")
 
 if st.button("Gerar tabela e gráfico!"):
