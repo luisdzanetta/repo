@@ -90,7 +90,7 @@ alpha = st.slider("Alfa (α)", 0.01, 0.1, 0.05, 0.01)
 beta = st.slider("Beta (β)", 0.1, 0.8, 0.2, 0.05)
 num_weeks = st.slider("Número de semanas do experimento", 1, 20, 10, 1)
 control_cr = st.slider("Conversão do grupo controle (%)", 0.0, 100.0, 5.0, 0.05) / 100
-num_variants = st.slider("Número de variantes (incluindo o controle)", 2, 5, 1, 1)
+num_variants = st.slider("Número de variantes (incluindo o controle)", 1, 5, 2, 1)
 total_sample_size = st.number_input("Amostra por semana", min_value=1, step=100, format="%i")
 
 if st.button("Gerar tabela e gráfico!"):
