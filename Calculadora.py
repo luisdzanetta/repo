@@ -8,7 +8,7 @@ from math import sqrt
 from scipy.stats import norm
 
 def calculate_mde(alpha, beta, cr, control_cr, sample_size, num_variants):
-    pooled_prob = (control_cr + cr * num_variants) / (num_variants)
+    pooled_prob = (control_cr + cr * num_variants) / (num_variants + 1)
     se = sqrt(pooled_prob * (1 - pooled_prob) * ((1 / sample_size) + (num_variants/sample_size)))
     z_alpha = abs(norm.ppf(alpha/2)) #two-tailed
     #z_alpha = abs(norm.ppf(alpha)) #one-tailed
@@ -23,13 +23,13 @@ def generate_table_and_plot(alpha, beta, num_weeks, control_cr, total_sample_siz
     total_sample_size_values = []
     for week in range(1, num_weeks+1):
         week_total_sample_size = total_sample_size * week
-        week_sample_size = week_total_sample_size / (num_variants)
-        mde = calculate_mde(alpha, beta, control_cr * (1 + 0.01*week), control_cr, week_sample_size, num_variants) * 100
+        week_sample_size = week_total_sample_size / (control_cr * num_variants)
+        mde = calculate_mde(alpha, beta, control_cr * (1 + 0.01*week), control_cr, week_sample_size, num_variants)
         week_total_sample_size_str = format(week_total_sample_size, ".0f")
         week_sample_size_str = format(week_sample_size, ".0f")
-        mde_str = f"{mde:.2f}%"
+        mde_str = f"{mde*100:.2f}%"
         table.append([week, week_sample_size_str, week_total_sample_size_str, mde_str])
-        mde_values.append(mde)
+        mde_values.append(mde*100)
         total_sample_size_values.append(week_total_sample_size)
         
     sns.set_style("white")
