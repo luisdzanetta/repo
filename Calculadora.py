@@ -46,11 +46,10 @@ def calculate_mde(alpha, beta, cr, control_cr, sample_size, num_variants):
         #total_sample_size_values.append(week_total_sample_size)
         
 #Bonferroni         
-def generate_table_and_plot(alpha, beta, num_weeks, control_cr, total_sample_size, num_variants):
+def generate_table_and_plot(alpha, beta, num_weeks, control_cr, total_sample_size, num_variants, num_comparisons=1):
     table = []
     mde_values = []
     total_sample_size_values = []
-    num_comparisons = num_variants # define num_comparisons
     for week in range(1, num_weeks+1):
         week_total_sample_size = total_sample_size * week
         week_sample_size = week_total_sample_size / (num_variants)
@@ -60,7 +59,7 @@ def generate_table_and_plot(alpha, beta, num_weeks, control_cr, total_sample_siz
         mde_str = f"{mde*100:.2f}%"
         table.append([week, week_sample_size_str, week_total_sample_size_str, mde_str])
         mde_values.append(mde*100)
-        total_sample_size_values.append(week_total_sample_size)        
+        total_sample_size_values.append(week_total_sample_size)         
       
     sns.set_style("white")
     plt.rcParams['axes.spines.top'] = False
