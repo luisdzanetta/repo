@@ -46,14 +46,14 @@ def calculate_mde(alpha, beta, cr, control_cr, sample_size, num_variants):
         #total_sample_size_values.append(week_total_sample_size)
         
 #Bonferroni         
-def generate_table_and_plot(alpha, beta, num_weeks, control_cr, total_sample_size, num_variants, num_comparisons=1):
+def generate_table_and_plot(alpha, beta, num_weeks, control_cr, total_sample_size, num_variants):
     table = []
     mde_values = []
     total_sample_size_values = []
     for week in range(1, num_weeks+1):
         week_total_sample_size = total_sample_size * week
         week_sample_size = week_total_sample_size / (num_variants)
-        mde = calculate_mde(alpha, beta, control_cr, control_cr, week_sample_size, num_variants, num_comparisons=num_comparisons)
+        mde = calculate_mde(alpha, beta, control_cr, control_cr, week_sample_size, num_variants, num_comparisons=num_variants)
         week_total_sample_size_str = format(week_total_sample_size, ".0f")
         week_sample_size_str = format(week_sample_size, ".0f")
         mde_str = f"{mde*100:.2f}%"
