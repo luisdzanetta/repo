@@ -18,12 +18,12 @@ from scipy.stats import norm
     #return mde
     
 #Bonferroni     
-def calculate_mde(alpha, beta, cr, control_cr, sample_size, num_variants, num_comparisons=1):
+def calculate_mde(alpha, beta, cr, control_cr, sample_size, num_variants):
     pooled_prob = (control_cr + cr * num_variants) / (num_variants)
     se = sqrt(pooled_prob * (1 - pooled_prob) * ((1 / sample_size) + (num_variants/sample_size)))
-    adj_alpha = alpha / num_comparisons
-    z_alpha = abs(norm.ppf(adj_alpha/2)) #two-tailed
-    #z_alpha = abs(norm.ppf(adj_alpha)) #one-tailed
+    bonferroni_alpha = alpha / num_variants  # Adjust alpha for multiple comparisons using Bonferroni correction
+    z_alpha = abs(norm.ppf(bonferroni_alpha/2)) #two-tailed
+    #z_alpha = abs(norm.ppf(bonferroni_alpha)) #one-tailed
     z_beta = abs(norm.ppf(beta))
     mde = (z_alpha + z_beta) * se / pooled_prob
     return mde
