@@ -7,7 +7,7 @@ import pandas as pd
 from math import sqrt
 from scipy.stats import norm
 
-#Original
+#Sem correção de Bonferroni
 #def calculate_mde(alpha, beta, cr, control_cr, sample_size, num_variants):
     #pooled_prob = (control_cr + cr * num_variants) / (num_variants)
     #se = sqrt(pooled_prob * (1 - pooled_prob) * ((1 / sample_size) + (num_variants/sample_size)))
@@ -28,7 +28,7 @@ def calculate_mde(alpha, beta, cr, control_cr, sample_size, num_variants):
     mde = (z_alpha + z_beta) * se / pooled_prob
     return mde
 
-#Original
+#Sem correção de Bonferroni
 #def generate_table_and_plot(alpha, beta, num_weeks, control_cr, total_sample_size, num_variants):
     #table = []
     #mde_values = []
