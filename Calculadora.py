@@ -46,7 +46,7 @@ def calculate_mde(alpha, beta, cr, control_cr, sample_size, num_variants):
         #total_sample_size_values.append(week_total_sample_size)
         
 #Bonferroni         
-def generate_table_and_plot(alpha, beta, num_weeks, control_cr, total_sample_size, num_variants, num_comparisons=1):
+def generate_table_and_plot(alpha, beta, num_weeks, control_cr, total_sample_size, num_variants):
     table = []
     mde_values = []
     total_sample_size_values = []
