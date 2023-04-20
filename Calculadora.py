@@ -19,7 +19,7 @@ from scipy.stats import norm
     
 #Bonferroni     
 def calculate_mde(alpha, beta, cr, control_cr, sample_size, num_variants):
-    pooled_prob = (control_cr + cr * num_variants) / (num_variants + 1)
+    pooled_prob = (control_cr + cr * num_variants) / (num_variants)
     se = sqrt(pooled_prob * (1 - pooled_prob) * ((1 / sample_size) + (num_variants/sample_size)))
     bonferroni_alpha = alpha / (num_variants - 1)  # Adjust alpha for multiple comparisons using Bonferroni correction
     z_alpha = abs(norm.ppf(bonferroni_alpha/2)) #two-tailed
